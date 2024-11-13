@@ -42,29 +42,56 @@ main {
     padding: 40px;
 }
 
-section {
+form {
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
 }
 
 section h2 {
     font-size: 24px;
 }
 
-section p {
-    line-height: 1.5;
+section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section li {
+    margin-bottom: 10px;
 }
 
 section a {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
+    color: #333;
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
 }
 
 section a:hover {
-    background-color: #555;
+    color: #555;
 }
 
 /* Estilos de pie de página */
