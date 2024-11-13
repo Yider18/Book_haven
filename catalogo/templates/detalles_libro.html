@@ -1,0 +1,45 @@
+1 <!DOCTYPE html>
+2 <html lang="es">
+3 <head>
+4     {% load static %}
+5     <meta charset="UTF-8">
+6     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+7     <title>{% if libro %}{{ libro.title }}{% else %}Detalle del Libro{% endif %}</title>
+8     <link rel="stylesheet" href="{% static 'stylesd.css' %}">
+9 </head>
+10 <body>
+11     <header>
+12         <h1>{% if libro %}{{ libro.title }}{% else %}Detalles del Libro{% endif %}</h1>
+13         <nav>
+14             <ul>
+15                 <li><a href="{% url 'index' %}">Página Principal</a></li>
+16                 <li><a href="{% url 'buscar_libros' %}">Buscar Libros</a></li>
+17             </ul>
+18         </nav>
+19     </header>
+20 
+21     <main>
+22         {% if libro %}
+23             <section>
+24                 <h2>{{ libro.volumeInfo.title|default:'Título no disponible' }}</h2>
+25                 <p><strong>Autor:</strong> {{ libro.volumeInfo.authors|join:", "|default:'No disponible' }}</p>
+26                 <p><strong>Descripción:</strong> {{ libro.volumeInfo.description|default:'No disponible' }}</p>
+27                 <p><strong>Editorial:</strong> {{ libro.volumeInfo.publisher|default:'No disponible' }}</p>
+28                 <p><strong>Año de publicación:</strong> {{ libro.volumeInfo.publishedDate|default:'No disponible' }}</p>
+29 
+30                 {% if libro.volumeInfo.imageLinks %}
+31                     <img src="{{ libro.volumeInfo.imageLinks.thumbnail }}" alt="Portada del libro">
+32                 {% else %}
+33                     <p>No hay imagen disponible</p>
+34                 {% endif %}
+35             </section>
+36         {% else %}
+37             <p>{{ error }}</p>
+38         {% endif %}
+39     </main>
+40 
+41     <footer>
+42         <p>&copy; 2024 Biblioteca Germán Arciniegas</p>
+43     </footer>
+44 </body>
+45 </html>

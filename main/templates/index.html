@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven - Página de Inicio</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Book Haven</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'buscar_libros' %}">Buscar Libros</a></li>
+                <li><a href="{% url 'detalles_libro' 'libro_id' %}">Detalles del Libro</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Accede a nuestro Catálogo de Libros</h2>
+            <p>Explora nuestra colección de libros. Encuentra lo que más te interese.</p>
+            <a href="{% url 'buscar_libros' %}">Explorar Catálogo</a>
+        </section>
+
+        <section>
+            <h2>Eventos en la Biblioteca</h2>
+            <p>Conoce los eventos culturales y educativos que realizamos en la Biblioteca Germán Arciniegas.</p>
+            <a href="#">Ver Eventos</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Biblioteca Germán Arciniegas</p>
+    </footer>
+</body>
+</html>

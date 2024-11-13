@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Libros</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Buscar Libros</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form method="get" action="{% url 'buscar_libros' %}">
+            <input type="text" name="q" value="{{ query }}" placeholder="Buscar libros por título, autor, o categoría">
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if resultados %}
+            <section>
+                <h2>Resultados de la Búsqueda</h2>
+                <ul>
+                    {% for item in resultados.items %}
+                        <li>
+                            <a href="{% url 'detalles_libro' item.id %}">{{ item.volumeInfo.title }}</a> -
+                            {{ item.volumeInfo.authors|join:", " }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% elif query %}
+            <p>No se encontraron resultados para "{{ query }}"</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Biblioteca Germán Arciniegas</p>
+    </footer>
+</body>
+</html>
