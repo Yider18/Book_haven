@@ -22,3 +22,5 @@ def buscar_libros(request):
         resultados = GoogleBooksService.buscar_libro(query)  
 
     return render(request, 'buscar_libros.html', {'query': query, 'resultados': resultados})
+
+

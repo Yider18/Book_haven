@@ -24,5 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_views.index, name='index'),  
     path('buscar_libros/', main_views.buscar_libros, name='buscar_libros'),  
-    path('detalles/<str:google_books_id>/', main_views.detalles_libro, name='detalles_libro'),  
+    path('detalles/<str:google_books_id>/', main_views.detalles_libro, name='detalles_libro'), 
+    path('buscar_libros_locales/', main_views.buscar_libros_locales, name='buscar_libros_locales'),
+    path('detalle_libro_local/<int:libro_id>/', main_views.detalle_libro_local, name='detalle_libro_local'),
+
 ] 

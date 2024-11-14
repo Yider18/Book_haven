@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Libro</title>
+    <link rel="icon" href="{% static 'imagen/3145765.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styled.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del Libro</h1>
+        
+        <div class="libro-detalle">
+            <h3>{{ libro.titulo }}</h3>
+            <p><strong>Autor:</strong> {{ libro.autor }}</p>
+            <p><strong>Categoría:</strong> {{ libro.categoria }}</p>
+            <p><strong>Publicado en:</strong> {{ libro.publicado_en }}</p>
+            <p><strong>ISBN:</strong> {{ libro.isbn }}</p>
+            <p>{{ libro.descripcion }}</p>
+        </div>
+
+        <a href="{% url 'buscar_libros_locales' %}">Volver a la búsqueda</a>
+    </div>
+</body>
+</html>
