@@ -12,7 +12,7 @@ class GoogleBooksService:
         try:
             params = {
                 'q': query,
-                'maxResults': 40,
+                'maxResults': 10,
                 'langRestrict': 'es'
             }
             response = requests.get(GoogleBooksService.BASE_URL, params=params)

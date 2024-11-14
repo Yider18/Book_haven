@@ -79,66 +79,70 @@ section p {
     color: #555;
 }
 
-/* Estilos específicos para detalles del libro */
-section img {
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 1.5rem 0;
+/* Formulario de búsqueda */
+form {
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    font-size: 1rem;
 }
 
-section strong {
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+
+section ul {
+    list-style: none;
+}
+
+section li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+section li:last-child {
+    border-bottom: none;
+}
+
+section a {
     color: var(--primary-color);
-    font-weight: 600;
+    text-decoration: none;
 }
 
-/* Error message styles */
+section a:hover {
+    color: var(--secondary-color);
+}
+
+
 p:last-child {
     color: var(--secondary-color);
     font-style: italic;
 }
 
-/* Footer */
+
 footer {
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(255, 253, 253);
     text-align: center;
     padding: 1.5rem;
     position: fixed;
     bottom: 0;
     width: 100%;
-}
-
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav a {
-        display: block;
-        padding: 0.8rem;
-        text-align: center;
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    main {
-        padding: 0 1rem;
-        margin-bottom: 5rem; /* Espacio para el footer fijo */
-    }
-
-    section {
-        padding: 1.5rem;
-    }
-
-    img {
-        max-width: 100%;
-    }
 }

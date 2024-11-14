@@ -1,107 +1,180 @@
-/* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
 }
 
-/* Estilos de encabezado */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header y navegación */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 36px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
     display: flex;
-}
-
-nav li {
-    margin-right: 20px;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    color: #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos de contenido principal */
+/* Contenido principal */
 main {
-    padding: 40px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-button[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #555;
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 section h2 {
-    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 
+section p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Formulario de búsqueda */
+form {
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+/* Resultados de búsqueda */
 section ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    list-style: none;
 }
 
 section li {
-    margin-bottom: 10px;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+section li:last-child {
+    border-bottom: none;
 }
 
 section a {
-    color: #333;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 section a:hover {
-    color: #555;
+    color: var(--secondary-color);
 }
 
-/* Estilos de pie de página */
+/* Error message styles */
+p:last-child {
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* Footer */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--primary-color);
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-footer p {
-    margin: 0;
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.8rem;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+        padding: 0 1rem;
+        margin-bottom: 5rem; /* Espacio para el footer fijo */
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
 }
